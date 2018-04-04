@@ -1,0 +1,14 @@
+<script type="text/html" id="template:reveal">
+  <div class="modal" id="reveal">
+    <p>[[= _.path ]]</p>
+    [[ $.each(_.secret.split(''), function (i,x) {
+              if (x.match(/[a-zA-Z]/)) { ]]<span class="a">[[= x ]]</span>[[ }
+         else if (x.match(/[0-9]/))    { ]]<span class="n">[[= x ]]</span>[[ }
+         else if (x == "&")            { ]]<span class="p">&amp;</span>[[    }
+         else if (x == "<")            { ]]<span class="p">&lt;</span>[[     }
+         else if (x == ">")            { ]]<span class="p">&gt;</span>[[     }
+         else if (x == '"')            { ]]<span class="p">&quot;</span>[[   }
+         else                          { ]]<span class="p">[[= x ]]</span>[[ }
+       }); ]]
+  </div>
+</script>

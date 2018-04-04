@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>James' Vault</title>
+<style type="text/css">
+## css/reset.css ##
+## css/app.css ##
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAREAAABJCAYAAAAaPhKgAAAACXBIWXMAAD6AAAA+gAEZ/4yiAAAEMUlEQVR42u2d0VHrMBBFbzI0kFdCXgmhhFAClJCUEJcQl0BacAm4hJcW3IJL8PuImAEGiC1L8so+ZyZ/GC+7q+vdtRRWXdcJAMCXNS4AAEQEABARAEBEAAARAQBARAAAEQEARAQAEBEAAEQEAEyJyLOks6Q3SV2Ez96IPfuAPj553H8s/zzuuUno7zf3e56N+3PMvVLY2U38OUnSQw9DN5IO7oKNAeGzZo81tpJ2A6+5SmoT+nv/QahbSaWkyy82gGEeegT71SWmBazZYxGfKqqa0N8bV5UcJB0l1YRwPu3MyZWdVhasNXvmLiKp/b119zsRwnlUImdjwXx1Tyq4/1QfOmdo3MdK/M/u7ygIZ76VyMGYgBwQkKRViIX4n4h5viKydU8CK2xdFQJpRMRS/M+0rnmKyKtsvfFAQIYxtJVpdXszYzH+G+Kfn4jsFHZ/RIin6p4QDfLXUAGojPt7r+Gvq2FCEbHWgz4TnuitTJ2Bv5mNZCQi1pIIEYnvryoDf5MHmYjITrZmIdbssc5Ow4eQVSb+3tDS2OZ9n4jPFPx9u3JImhH2NLptnQ5px1JamZTx99k+v9XnATDcWPX8uaHncoohsR0jIk8RA+tjz8uCE21sK5My/rVuBwRj5wMkbmd8sLZglyogoQ/cxfY3FQUiAjNoZSrcBogIICKAiATG6pcSxSTUgTsARIQqhCoEEBFARAARgcSMPXAHMJoHXJB1FTLmwN1YfL5YeEXYqEQg71aG7y8FRAS8W5nQlQgAIpIxYw/cASAitDK0MoCIQNpWBhEBRAQk+R+4Y5cqICLg3cowD4FozGmfSMh/dmT5qc08BBCRSJQLiJfvgTt2qQLtDNDKACICtDJAO/OJHWVyNL7zrU8r00YUkSJzf/a9Lgc7TYiIzyDxTeHnEJXm9yoylG8PmvbA3VfKzP3ZZ0EPFe3rBHZ+Z0Odi4hsFP6fP18RkaC+nWMrYyVX79k2lZ1F6rivPyzeVhCDqXzbap5DVcu5es3EzigiIjHFj0m1kHsu/W+rFhSDb0XkwlqPxhS+LfFncgFpMrAzqogkH8gsrKWpEy+yBn9OLmyLWFNf94kcxWwkFql82yqv16/W/dm36qszsDOJiDQLScApSOXbl4U8CKzk6vVO6zj7NbX+oSwrWfPRSt6Yvj0urCWdOlfbnqI96zX107b3gookGrF8e9Qyh+NT5epV0qP6z55mu6bWd/q8J/FlNrF66FC+bVwyX/Bnslz1vd8s19S9A3i1S9BCDFxDM9a37wPUR3GGKVWu1k4Extxjdmtq3TNZS0l/XP9XilfBIXvqIb6tXcXx4q4pEfdf/XkZmauNu76Q9NcJSD1B3E2z6rqO1AOAqJUIAAAiAgCICAAgIgCAiAAAICIAgIgAACICAIgIACAiAACICAAgIgCAiAAAIgIAMIT/qVma0x+keLkAAAAASUVORK5CYII="></span>
+      <a rel="new" href="#">+</a>
+      <ul class="header menu modal">
+        <li>Create a new
+          <ul>
+          <li><a rel="new:secret" href="#">Secret</a></li>
+          <li><a rel="new:ssh" href="#">SSH Keypair</a></li>
+          <li><a rel="new:rsa" href="#">RSA Keypair</a></li>
+          <li><a rel="new:ca" href="#">X.509 CA</a></li>
+          <li><a rel="new:cert" href="#">X.509 Certificate</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <div class="m" id="m"></div>
+  <div id="modal"></div>
+
+## lens/home.lens           ##
+## lens/search-results.lens ##
+## lens/new-keypair.lens    ##
+## lens/new-x509.lens       ##
+## lens/new-secret.lens     ##
+## lens/errors.lens         ##
+## lens/secret.lens         ##
+## lens/reveal.lens         ##
+
+  <footer>Copyright &copy; 2018 <a href="https://jameshunt.us">James Hunt</a></footer>
+<script type="text/javascript">
+## js/jquery.js ##
+## js/lens.js   ##
+## js/app.js    ##
+</script>
+</body>
+</html>

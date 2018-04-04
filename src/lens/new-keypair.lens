@@ -1,0 +1,18 @@
+<script type="text/html" id="template:new-keypair">
+  <div id="new-[[= _.type ]]">
+    <h1>New [[= _.type == 'rsa' ? 'RSA' : 'SSH' ]] Keypair</h1>
+    <form class="update" data-type="[[= _.type ]]">
+      <div class="errors"></div>
+      <li class="path">
+          <label for="path">path</label>
+          <input type="text" name="path" placeholder="e.g. /us/east/prod/vm"></li>
+      <li class="bits-for"><label for="bits">strength</label>
+          <ul class="radio">
+            <li data-value="1024">1024-bit</li>
+            <li class="selected" data-value="2048">2048-bit</li>
+            <li data-value="4096">4096-bit</li>
+          </ul></li>
+      <button>Generate</button>
+    </form>
+  </div>
+</script>

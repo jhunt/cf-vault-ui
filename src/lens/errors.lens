@@ -1,0 +1,3 @@
+<script type="text/html" id="template:errors">
+  <ul>[[ $.each(_, function (i,err) { ]]<li>[[= err ]]</li>[[ }); ]]</ul>
+</script>

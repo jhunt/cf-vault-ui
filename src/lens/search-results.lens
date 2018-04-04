@@ -1,0 +1,16 @@
+<script type="text/html" id="template:search-results">
+  [[ if (_.results && _.results.length > 0) { ]]
+  <div class="results">
+    <ul>[[ $.each(_.results, function (i, r) { ]]
+      <li class="secret">
+        <h2><a href="/secret/[[= r.path ]]">[[= r.path ]]</a></h2><span class="tag">secret</span>
+        <p>contains [[= $.map($.keys(r.secret), function (k) { return "<span>"+k+"</span>"; }).join(', ') ]]</p></li>
+    [[ }); ]]</ul>
+  </div>
+  [[ } else { ]]
+  <div class="no-data">
+    No matching secrets found.<br/>
+    Shall we <a href="#" rel="new:secret">create one</a>?
+  </div>
+  [[ } ]]
+</script>

@@ -1,0 +1,131 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "DE6jvAzC7h6Mczf8Tr0X5SkzeNI=",
+			"origin": "github.com/starkandwayne/safe/vendor/github.com/jhunt/go-ansi",
+			"path": "github.com/jhunt/go-ansi",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "NkbetqlpWBi3gP08JDneC+axTKw=",
+			"origin": "github.com/starkandwayne/safe/vendor/github.com/mattn/go-isatty",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "+bqkymIDXrOgmsuUHjWsdpcwn+8=",
+			"origin": "github.com/starkandwayne/safe/vendor/github.com/starkandwayne/goutils/ansi",
+			"path": "github.com/starkandwayne/goutils/ansi",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "a+CBFnEuiiR6Qp/Y/2NM6K/mlBE=",
+			"origin": "github.com/starkandwayne/safe/vendor/github.com/starkandwayne/goutils/tree",
+			"path": "github.com/starkandwayne/goutils/tree",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "J/cssPr+xOuY0JtnXZvWKQCP4Lc=",
+			"path": "github.com/starkandwayne/safe/prompt",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "Cb2gAZEFxiOsOwizpG6a8hJkE0o=",
+			"path": "github.com/starkandwayne/safe/vault",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "MFwXW+d+HJR+bLmIjhSV6XnDs9A=",
+			"origin": "github.com/starkandwayne/safe/vendor/github.com/tredoe/osutil/user/crypt",
+			"path": "github.com/tredoe/osutil/user/crypt",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "QEuwxVISS6InjeaZiEJPwgAE24A=",
+			"origin": "github.com/starkandwayne/safe/vendor/github.com/tredoe/osutil/user/crypt/common",
+			"path": "github.com/tredoe/osutil/user/crypt/common",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "23JmRA3tf9pKWNQZKqjfaDHqPv0=",
+			"origin": "github.com/starkandwayne/safe/vendor/github.com/tredoe/osutil/user/crypt/md5_crypt",
+			"path": "github.com/tredoe/osutil/user/crypt/md5_crypt",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "+vU+2y6sL7lgRzp58njnRayirnU=",
+			"origin": "github.com/starkandwayne/safe/vendor/github.com/tredoe/osutil/user/crypt/sha256_crypt",
+			"path": "github.com/tredoe/osutil/user/crypt/sha256_crypt",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "LIBKbI2B9xyUQ49RVmyO5aisGDo=",
+			"origin": "github.com/starkandwayne/safe/vendor/github.com/tredoe/osutil/user/crypt/sha512_crypt",
+			"path": "github.com/tredoe/osutil/user/crypt/sha512_crypt",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "vE43s37+4CJ2CDU6TlOUOYE0K9c=",
+			"origin": "github.com/starkandwayne/safe/vendor/golang.org/x/crypto/bcrypt",
+			"path": "golang.org/x/crypto/bcrypt",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "udD2DzUPFZbMVXP0VNADhef4zKk=",
+			"origin": "github.com/starkandwayne/safe/vendor/golang.org/x/crypto/blowfish",
+			"path": "golang.org/x/crypto/blowfish",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "h+pFYiRHBogczS8/F1NoN3Ata44=",
+			"origin": "github.com/starkandwayne/safe/vendor/golang.org/x/crypto/curve25519",
+			"path": "golang.org/x/crypto/curve25519",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "locu61AZ1k1skk45VLE2zpDaVTA=",
+			"origin": "github.com/starkandwayne/safe/vendor/golang.org/x/crypto/ssh",
+			"path": "golang.org/x/crypto/ssh",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "bA2gANkJBx2Br/p5GKYdhyGo3Pg=",
+			"origin": "github.com/starkandwayne/safe/vendor/golang.org/x/crypto/ssh/terminal",
+			"path": "golang.org/x/crypto/ssh/terminal",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "2d6xZ5nj4+FCgkrVUv1YJBZnzuk=",
+			"origin": "github.com/starkandwayne/safe/vendor/golang.org/x/sys/unix",
+			"path": "golang.org/x/sys/unix",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		},
+		{
+			"checksumSHA1": "Ww6wiSKdA8LwxoJz4DNUF+crH4g=",
+			"origin": "github.com/starkandwayne/safe/vendor/gopkg.in/yaml.v2",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "0de83d290f38485aaedf1238525cd4c619acf2dd",
+			"revisionTime": "2018-04-03T21:49:08Z"
+		}
+	],
+	"rootPath": "github.com/jhunt/cf-vault-ui"
+}

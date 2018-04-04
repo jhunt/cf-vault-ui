@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>James' Vault</title>
+<style type="text/css">
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/****/
+body > header {
+  xbox-shadow: 0px 0px 7px #000;
+  position: fixed;
+  width: 100vw;
+  box-sizing: border-box;
+  height: 58px;
+  padding: 6px;
+  background-color: black;
+  color: #fff;
+  z-index: 50;
+}
+body > header > div {
+  margin: 0 auto;
+  max-width: 70vw;
+  display: block;
+  display: flex;
+  justify-content: space-between;
+}
+body > header > div img {
+  position:relative;
+    top: -4px;
+    }
+body > header > div a[rel=new] {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  font-size: 24px;
+  font-weight: bold;
+    top: 22px;
+}
+body > header > div span {
+  font-family: sans-serif;
+  color: lime;
+  line-height: 24px;
+}
+body > header > div {
+  position: relative;
+}
+body header .menu {
+	top: 58px;
+	right: 0px;
+}
+.menu {
+  position: absolute;
+    display: inline-block;
+	background-color: #fff;
+	color: #000;
+	padding: 12px;
+	font-family: sans-serif;
+	box-shadow: 0px 0px 12px #ccc;
+}
+.menu > li {
+  font-weight: bold;
+}
+.menu > li ul {
+  font-weight: normal;
+    margin-bottom: 1em;
+}
+.menu > li:last-child ul {
+  margin-bottom: 0;
+  }
+.menu > li ul li {
+  margin: 0 1em;
+	line-height: 1.4em;
+}
+.menu > li ul li a {
+  text-decoration: none;
+  color: #000;
+}
+.menu > li ul li a:hover {
+  text-decoration: underline;
+	cursor: pointer;
+  color: rgba(228,38,146, 1);
+}
+.control.menu {
+  margin-left: 6px;
+}
+footer {
+  color: #888;
+  text-align: center;
+  padding: 1em;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+footer a {
+  color: #2F2BAD;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px dotted #2F2BAD;
+}
+body {
+  position: absolute;
+  width: 100vw;
+}
+.m {
+  z-index: 5;
+  display: block;
+  margin: 72px auto;
+  max-width: 70vw;
+}
+.m h1 {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 1em 0;
+  border-bottom: 1px dashed #ccc;
+}
+.m form > li {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 8px;
+  margin: 14px 0;
+
+}
+.m form > li.key-value {
+  margin: 8px 0;
+}
+.m form > li label,
+.m .key-value .key {
+  font-family: sans-serif;
+  color: #777;
+  font-size: 14px;
+
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  padding-right: 10px;
+}
+.m form > li input,
+.m form > li textarea {
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  padding: 4px;
+    width: 55%;
+}
+.m form > li textarea {
+  height: 10em;
+      vertical-align: top;
+}
+.m form > li input:focus,
+.m form > li textarea:focus {
+  box-shadow: 2px 2px 8px #ccc;
+}
+input::placeholder {
+  font-style: italic;
+  color: #aaa;
+}
+.m form input::placeholder {
+  font-weight: normal;
+}
+.m form .signed-by input,
+.m form .path input {
+  width: 70%;
+    box-sizing: border-box;
+}
+.m form .path input:disabled {
+  background-color: #fff;
+  color: #2F2BAD;
+}
+input:focus::placeholder {
+  opacity: 0;
+}
+.m form > li a.widget {
+  color: #999;
+  text-decoration: none;
+  border: none;
+  font-size: 24px;
+}
+.m form > li a.widget:hover {
+  color: #555;
+}
+.m form button {
+  display: block;
+margin-top: 14px;
+  margin-left: 95px;
+  font-size: 18px;
+  font-size: 15px;
+  background-color: #5FD0D4;
+background-color: #EFA93A;
+background-color: #2F2BAD;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 18px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+.m ul.radio {
+  list-style: none;
+  display: inline-flex;
+  justify-contents: left;
+}
+.m ul.radio li {
+  font-family: sans-serif;
+  padding: 4px 6px;
+  cursor: pointer;
+  opacity: 1;
+    color: #ccc;
+}
+.m ul.radio li:hover {
+  color: #000;
+    background-color: rgba(228,38,146, 0.1);
+  border-bottom: 4px solid rgba(228,38,146, 1);
+  padding-bottom: 0px;
+}
+.m .expires-in ul.radio li {
+  padding: 4px 2px;
+}
+.m .expires-in ul.radio li:hover {
+  padding-bottom: 0px;
+}
+.m ul.radio li.selected {
+  color: #000;
+/*
+  background-color: #ade32d;
+background-color: #729849;
+background-color: #FD2E58;
+background-color: #E42692;
+  color: #fff;
+box-shadow: 0px 0px 3px #343D3A;
+  border-radius: 4px;
+*/
+font-weight: bold;
+  opacity: 1;
+}
+.m .expires-in > input {
+  text-align: right;
+  width: 4ex;
+}
+.tag {
+  border-radius: 3px;
+  background-color: #5FD0D4;
+background-color: #AD2BAD;
+  font-family: monospace;
+  font-size: 11px;
+  color: #fff;
+  padding: 2px 6px;
+	height: 14px;
+}
+.m .valid-for .tag {
+  position: relative;
+  top: 8px; left: 8px;
+  vertical-align: top;
+}
+.m .key-value .key {
+  width: 80px;
+  font-weight: normal;
+  text-align: right;
+}
+.m form .autocomplete {
+  margin-left: 94px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  z-index: 15;
+  position: relative;
+	width: 49vw; /* 70% of 70% */
+	min-width: 400px;
+    position: absolute;
+
+    border: none;
+  box-shadow: 2px 2px 8px #ccc;
+
+    max-height: 160px;
+      overflow: scroll;
+}
+
+.m form .autocomplete li {
+  display: flex;
+padding-left: 8px;
+}
+.m form .autocomplete li:nth-child(even) {
+  background-color: #eee;
+}
+.m form .autocomplete li:hover {
+  cursor: pointer;
+  padding-left: 4px;
+    background-color: rgba(228,38,146, 0.1);
+      border-left: 4px solid rgba(228,38,146, 1);
+}
+
+.m form .autocomplete li h2 {
+  font-size: 18px;
+	font-weight: bold;
+	font-family: sans-serif;
+	margin: 8px;
+	width: auto;
+	flex: 1;
+}
+.m form .autocomplete li .tag {
+  position: relative;
+	top: 8px;
+	margin-right: 14px;
+  height: 12px;
+}
+
+
+
+.m .q {
+	display: flex;
+	width: 70vw;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	padding: 14px;
+	box-sizing: border-box;
+}
+.m .q input {
+	font-size: 24px;
+  border: none;
+  width: 100%;
+  margin-left: 8px;
+}
+.m .q span {
+padding: 4px 12px 4px 4px;
+border-right: 1px solid #999;
+display: block;
+width: 40px;
+height: 32px;
+float: left;
+box-sizing: border-box;
+margin-right: 8px;
+line-height: 32px;
+}
+
+.m .no-data {
+  padding: 16vh 0vh;
+    line-height: 48px;
+  font-size: 32px;
+  font-family: sans-serif;
+  color: #000;
+  text-align: center;
+}
+.m .no-data a {
+    text-decoration: none;
+      color: #2F2BAD;
+        border-bottom: 2px dotted #2F2BAD;
+}
+
+.m .results li {
+  padding: 8px;
+    padding-left: 16px;
+  margin: 24px;
+    cursor: pointer;
+}
+.m .results li:hover {
+  padding: 8px;
+    background-color: rgba(228,38,146, 0.1);
+      border-left: 8px solid rgba(228,38,146, 1);
+}
+.m .results li header {
+  display: flex;
+  justify-content: space-between;
+    width: 100%;
+}
+.m .results li h2 {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 24px;
+  float: left;
+  padding-right: 0.66em;
+}
+.m .results li p {
+  margin: 1em 1em 0.5em 1em;
+  font-family: sans-serif;
+    font-size: 13px;
+}
+.m .results li p + p {
+  margin: 0.5em 1em;
+}
+.m .results li p span {
+  font-weight: bold;
+  font-family: monospace;
+  border: 1px solid #ccc;
+  padding: 1px 3px;
+  border-radius: 2px;
+  color: #000;
+  background-color: #eee;
+}
+
+
+#reveal {
+  display: table;
+  border-spacing: 0;
+    border-collapse: collapse;
+      box-shadow: 0px 0px 12px #ccc;
+        overflow:hidden;
+          z-index: 40;
+            position:relative;
+              background-color: #fff;
+}
+#reveal span {
+  border: 1px solid #ccc;
+    border-width: 1px 1px 1px 0px;
+    display: inline-block;
+      text-align: center;
+        font-family: arial;
+          padding: 3px;
+            font-size: 36px;
+              margin: 0;
+                float: left;
+                  border-collapse: collapse;
+                    display: table-cell;
+}
+        #reveal span:first-child { border-left-width: 1px; }
+        #reveal span.a { color: #000; }
+        #reveal span.p { color: darkblue; }
+        #reveal span.n { color: maroon; }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <span><img src="cfvault.png"></span>
+      <a rel="new" href="#">+</a>
+      <ul class="header menu modal">
+        <li>Create a new
+          <ul>
+          <li><a href="#">Secret</a></li>
+          <li><a href="#">SSH Keypair</a></li>
+          <li><a href="#">RSA Keypair</a></li>
+          <li><a href="#">X.509 CA</a></li>
+          <li><a href="#">X.509 Certificate</a></li>
+					</ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="m" id="search">
+    <form class="q"><span>🔎</span><input type="text" name="q" placeholder="e.g. admin, or blacksmith/broker" autocomplete="off"></form>
+
+    <div class="results">
+      <ul>
+        <li class="secret">
+          <h2>/us/east/whatever</h2><span class="tag">secret</span>
+          <p>contains <span>username</span>, <span>password</span></p></li>
+        <li class="ssh">
+          <h2>/us/east/whatever/ssh</h2><span class="tag">ssh</span>
+          <p><span>2048 SHA256:gK+5sxS4VbW/cMEi9Y9bDZ4EIvzEVu1Zk6dpZ3lqHaA (RSA)</span></li>
+        <li class="x509-cert">
+          <h2>/us/east/whatever/ca</h2><span class="tag">ca</span>
+          <p>subject <span>cn=ca,ou=r&amp;d</span></p>
+          <p>valid for <span>this.name</span>, <span>that.name</span></p>
+          <p>expires in <span>948 days</span></p></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="m" id="search-no-data">
+    <form class="q"><span>🔎</span><input type="text" name="q" placeholder="e.g. admin, or blacksmith/broker" autocomplete="off"></form>
+    <div class="no-data">
+      No matching secrets found.<br/>
+      Shall we <a href="#">create one</a>?
+    </div>
+  </div>
+
+  <div class="m" id="new-rsa">
+    <h1>New RSA Keypair</h1>
+    <form>
+      <li class="path">
+          <label for="path">path</label>
+          <input type="text" name="path" placeholder="e.g. /us/east/prod/vm"></li>
+      <li><label for="bits">strength</label>
+          <input type="hidden" name="bits">
+          <ul class="radio">
+            <li data-value="1024">1024-bit</li>
+            <li class="selected" data-value="2048">2048-bit</li>
+            <li data-value="4096">4096-bit</li>
+          </ul></li>
+      <button>Generate</button>
+    </form>
+  </div>
+
+
+  <div class="m" id="new-ssh">
+    <h1>New SSH Keypair</h1>
+    <form>
+      <li class="path">
+          <label for="path">path</label>
+          <input type="text" name="path" placeholder="e.g. /us/east/prod/vm"></li>
+      <li><label for="bits">strength</label>
+          <input type="hidden" name="bits">
+          <ul class="radio">
+            <li data-value="1024">1024-bit</li>
+            <li class="selected" data-value="2048">2048-bit</li>
+            <li data-value="4096">4096-bit</li>
+          </ul></li>
+      <button>Generate</button>
+    </form>
+  </div>
+
+  <div class="m" id="new-x509-ca">
+    <h1>New X.509 Certificate Authority</h1>
+    <form>
+      <li class="path">
+          <label for="path">path</label>
+          <input type="text" name="path" placeholder="e.g. /us/east/prod/ca"></li>
+      <li class="expires-in">
+          <label for="ttl_num">expires in</label>
+          <input type="text" name="ttl_num" size="3" value="2">
+          <ul class="radio">
+            <li class="selected">y</li>
+            <li>m</li>
+            <li>d</li>
+            <li>h</li>
+          </ul></li>
+      <li class="signed-by">
+          <label for="ca">signed by</label>
+          <input type="text" name="ca" placeholder="e.g. /shared/prod/ca"></li>
+
+      <li class="valid-for">
+          <label for="names">valid for</label>
+          <input value="my.cert.example.com" type="text" name="name1"><span class="tag">dns</span></li>
+      <li class="valid-for">
+          <label for="names"></label>
+          <input value="my.cert.example.com" type="text" name="name1"><span class="tag">dns</span></li>
+
+      <li class="new valid-for">
+          <label for="names"></label>
+          <input placeholder="add a name, ip, or email..." type="text" name="name1"></li>
+
+      <button>Issue</button>
+    </form>
+  </div>
+
+  <div class="m" id="new-x509-cert">
+    <h1>New X.509 Certificate</h1>
+    <form>
+      <li class="path">
+          <label for="path">path</label>
+          <input type="text" name="path" placeholder="e.g. /us/east/prod/ca"></li>
+          <div class="autocomplete">
+            <ul>
+              <li><h2>/us/east/whatever</h2><span class="tag">secret</span></li>
+              <li><h2>/us/east/whatever/ssh</h2><span class="tag">ssh</span></li>
+              <li><h2>/us/east/whatever/rsa</h2><span class="tag">rsa</span></li>
+              <li><h2>/us/east/whatever/ca</h2><span class="tag">ca</span></li>
+              <li><h2>/us/east/whatever/cert</h2><span class="tag">cert</span></li>
+            </ul>
+          </div>
+      <li class="expires-in">
+          <label for="ttl_num">expires in</label>
+          <input type="text" name="ttl_num" size="3" value="2">
+          <ul class="radio">
+            <li class="selected">y</li>
+            <li>m</li>
+            <li>d</li>
+            <li>h</li>
+          </ul></li>
+      <li class="signed-by">
+          <label for="ca">signed by</label>
+          <input type="text" name="ca" placeholder="e.g. /shared/prod/ca"></li>
+
+      <li class="valid-for">
+          <label for="names">valid for</label>
+          <input value="my.cert.example.com" type="text" name="name1"><span class="tag">DNS</span></li>
+      <li class="valid-for">
+          <label for="names"></label>
+          <input value="my.cert.example.com" type="text" name="name1"><span class="tag">DNS</span></li>
+
+      <li class="new valid-for">
+          <label for="names"></label>
+          <input value="" placeholder="add a name, ip, or email..." type="text" name="name1"></li>
+
+      <button>Issue</button>
+    </form>
+  </div>
+
+  <div class="m" id="new-secret">
+    <h1>New Secret</h1>
+    <form>
+      <li class="path">
+          <label for="path">path</label>
+          <input type="text" name="path" placeholder="e.g. /us/east/prod/secret">
+      </li>
+      <li class="key-value">
+          <input class="key" type="text" name="key.1" value="password">
+          <input class="val" type="text" name="value.1">
+          <a class="widget" href="#">&#x2699;</a></li>
+      <li class="key-value">
+          <input class="key" type="text" name="key.1" value="password">
+          <textarea class="val" name="value.1"></textarea>
+          <a class="widget" href="#">&#x2699;</a></li>
+      <li class="new key-value">
+          <input class="key" type="text" name="key.next" placeholder="add...">
+          <input class="val" type="text" name="value.next">
+          <a class="widget" href="#">&#x2699;</a></li>
+      <button>Save</button>
+    </form>
+  </div>
+
+  <div class="m" id="secret">
+    <h1>Secret</h1>
+    <form>
+      <li class="path">
+          <label for="path">path</label>
+          <input type="text" name="path" value="/us/east/prod/secret" disabled>
+      </li>
+      <li class="key-value">
+          <input class="key" type="text" name="key.1" value="password">
+          <input class="val" type="text" name="value.1">
+          <a class="widget" href="#">&#x2699;</a>
+          <ul class="control menu">
+            <li>Secret Type
+                <ul><li><a href="#">Single-line</a></li>
+                    <li><a href="#">Multi-line</a></li></ul></li>
+                <li>Options
+                    <ul><li><a href="#">Randomize</a></li>
+                        <li><a href="#">Reveal</a></li>
+                        <li><a href="#">Reveal (large type)</a></li>
+                        <li><a href="#">Copy</a></li></ul></li>
+          </ul>
+      </li>
+      <li class="new key-value">
+          <input class="key" type="text" name="key.next" placeholder="add...">
+          <input class="val" type="text" name="value.next">
+          <a class="widget" href="#">&#x2699;</a></li>
+      <button>Save</button>
+    </form>
+  </div>
+
+  <div class="m" id="reveal">
+    <span class="a">H</span>
+    <span class="a">T</span>
+    <span class="a">V</span>
+    <span class="a">i</span>
+    <span class="a">r</span>
+    <span class="a">C</span>
+    <span class="p">&amp;</span>
+    <span class="a">Z</span>
+    <span class="a">s</span>
+    <span class="a">v</span>
+    <span class="a">U</span>
+    <span class="a">a</span>
+    <span class="p">,</span>
+    <span class="a">T</span>
+    <span class="n">6</span>
+    <span class="a">s</span>
+    <span class="n">4</span>
+    <span class="a">b</span>
+    <span class="a">a</span>
+    <span class="a">T</span>
+    <span class="a">s</span>
+    <span class="p">(</span>
+    <span class="a">E</span>
+    <span class="a">c</span>
+    <span class="a">K</span>
+    <span class="a">K</span>
+    <span class="a">j</span>
+    <span class="a">r</span>
+    <span class="n">7</span>
+    <span class="a">D</span>
+    <span class="a">u</span>
+    <span class="a">2</span>
+  </div>
+
+  <footer>Copyright &copy; 2018 <a href="https://jameshunt.us">James Hunt</a></footer>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="lens.js"></script>
+  <script type="text/javascript">
+  (function ($, document, window, undefined) {
+    $(function () {
+      $(document)
+      .on('click', 'body', function (event) {
+        if (!$(event.target).is('.modal, .modal *') || $(event.target).is('.modal a')) {
+          $('.modal').hide();
+        }
+      })
+      .on('click', 'header a[rel="new"]', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        $(event.target).next('.menu').toggle();
+      })
+      .on('click', '.radio li', function (event) {
+        var $radio = $(event.target).closest('.radio');
+        $radio.find('li').removeClass('selected');
+        $(event.target).addClass('selected');
+      })
+      .on('keyup', 'input', function (event) {
+        if (event.keyCode == 13) {
+          event.preventDefault();
+          var $fields = $(event.target).closest('form')
+                                       .find('input, textarea');
+          var $next = $fields.eq($fields.index($(event.target))+1);
+          console.log($next);
+          $next.focus();
+        }
+      })
+      .on('keyup', '.new input', function (event) {
+        var $ctl = $(event.target);
+        if ($ctl.val() == '') { return; }
+        var $cur = $ctl.closest('.new');
+        var $add = $cur.clone();
+        $cur.removeClass('new');
+        $add.find('input').each(function (i,e) { $(e).val(''); });
+        $add.insertAfter($cur);
+      })
+      .on('change', '.valid-for input', function (event) {
+        var $ctl = $(event.target);
+        var $cur = $ctl.closest('li');
+        console.log($ctl, $ctl.val());
+        var val = $ctl.val();
+        if (val == '' && $cur.siblings('li').length > 0) {
+          $cur.remove();
+          return;
+        }
+        $cur.find('.tag').remove();
+        if (val.match(/^\d+\.\d+\.\d+\.\d+$/)) {
+          console.log("%s looks like an IP", val);
+          $cur.append('<span class="tag">ip</span>');
+        } else if (val.match(/@/)) {
+          $cur.append('<span class="tag">email</span>');
+        } else {
+          $cur.append('<span class="tag">dns</span>');
+        }
+      })
+      .on('change', '.key-value input.key', function (event) {
+        var $ctl = $(event.target);
+        var $cur = $ctl.closest('li');
+        console.log($ctl, $ctl.val());
+        var kval = $cur.find('.key').val();
+        var vval = $cur.find('.val').val();
+        if (kval == '' && vval == '' && $cur.siblings('li').length > 0) {
+          $cur.remove();
+          return;
+        }
+      });
+    });
+  })(jQuery, document, window);
+  </script>
+</body>
+</html>

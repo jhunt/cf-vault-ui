@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+# vim:ft=perl
+
+for my $page (qw(index.html)) {
+	open my $in, "<", "src/$page"
+		or die "src/$page: $!\n";
+	open my $out, ">", "web/$page"
+		or die "web/$page (output file): $!\n";
+
+	while (<$in>) {
+		print $out $_ and next unless m/^##\s+(.*?)\s+##/;
+		open my $tpl, "<", "src/$1"
+			or die "src/$1 (included from src/$page): $!\n";
+		while (<$tpl>) { print $out $_; }
+		close $tpl;
+	}
+
+	close $in;
+	close $out;
+
+	print "wrote web/$page\n";
+}

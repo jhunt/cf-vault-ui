@@ -1,0 +1,7 @@
+<script type="text/html" id="template:home">
+  <div id="search">
+    <form class="q"><span>🔎</span><input type="text" name="q" placeholder="e.g. admin, or blacksmith/broker" autocomplete="off"></form>
+
+    <div class="search-render"></div>
+  </div>
+</script>
