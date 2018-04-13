@@ -56,7 +56,7 @@ func NewAPI(url, token, prefix string) (*API, error) {
 	}
 
 	if prefix != "" {
-		prefix = "/" + strings.Trim(prefix, "/")
+		prefix = strings.Trim(prefix, "/")
 	}
 	return &API{
 		memory: make(map[string]map[string]string),
@@ -67,14 +67,14 @@ func NewAPI(url, token, prefix string) (*API, error) {
 }
 
 func (a *API) sync() {
-	root := "secret" + a.prefix
+	root := a.prefix
 
 	tree, err := a.vault.Tree(root, vault.TreeOptions{
 		ShowKeys:     true,
 		StripSlashes: true,
 	})
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "[bg] failed to walk secret%s: %s\n", a.prefix, err)
+		fmt.Fprintf(os.Stderr, "[bg] failed to walk %s: %s\n", a.prefix, err)
 		return
 	}
 
@@ -139,7 +139,7 @@ func (a *API) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	}
 
 	if strings.HasPrefix(req.URL.Path, "/v1/secret/") {
-		root := "secret" + a.prefix + "/"
+		root := a.prefix + "/"
 		path := strings.TrimSuffix(strings.TrimPrefix(req.URL.Path, "/v1/secret/"), "/")
 
 		if req.Method == "GET" {
