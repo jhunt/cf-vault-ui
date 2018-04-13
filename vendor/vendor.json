@@ -10,6 +10,12 @@
 			"revisionTime": "2018-04-03T21:49:08Z"
 		},
 		{
+			"checksumSHA1": "Mx2d4XBbunxNQS2VgnDXrbXzzns=",
+			"path": "github.com/jhunt/vcaptive",
+			"revision": "e4d3950461378b0a5ad8ac4d1ceed670c6ed6414",
+			"revisionTime": "2018-01-22T15:52:29Z"
+		},
+		{
 			"checksumSHA1": "NkbetqlpWBi3gP08JDneC+axTKw=",
 			"origin": "github.com/starkandwayne/safe/vendor/github.com/mattn/go-isatty",
 			"path": "github.com/mattn/go-isatty",

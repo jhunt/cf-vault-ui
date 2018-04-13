@@ -6,26 +6,51 @@ import (
 	"os"
 
 	"github.com/jhunt/cf-vault-ui/static"
+	"github.com/jhunt/vcaptive"
 )
 
 func main() {
 	failed := false
+	url := os.Getenv("VAULT_URL")
+	tok := os.Getenv("VAULT_TOKEN")
+	pre := os.Getenv("VAULT_PREFIX")
 
-	url := os.Getenv("VAULT_ADDR")
+	if os.Getenv("VCAP_SERVICES") != "" {
+		services, err := vcaptive.ParseServices(os.Getenv("VCAP_SERVICES"))
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "unable to parse VCAP_SERVICES: %s\n", err)
+			os.Exit(1)
+		}
+
+		if vault, found := services.WithCredentials("vault"); found {
+			if url, found = vault.GetString("vault"); !found {
+				fmt.Fprintf(os.Stderr, "service %s does not define a vault URL (as `vault`)\n")
+				os.Exit(1)
+			}
+			if tok, found = vault.GetString("token"); !found {
+				fmt.Fprintf(os.Stderr, "service %s does not define a vault token (as `token`)\n")
+				os.Exit(1)
+			}
+			if pre, found = vault.GetString("root"); !found {
+				fmt.Fprintf(os.Stderr, "service %s does not define a vault prefix (as `root`)\n")
+				os.Exit(1)
+			}
+		}
+	}
 	if url == "" {
-		failed = true
-		fmt.Fprintf(os.Stderr, "Missing VAULT_ADDR environment variable (where is your Vault?)\n")
+		fmt.Fprintf(os.Stderr, "unable to determine Vault URL (did you forget to bind a Vault service?)\n")
+		os.Exit(1)
+	}
+	if tok == "" {
+		fmt.Fprintf(os.Stderr, "unable to determine Vault Token (did you forget to bind a Vault service?)\n")
+		os.Exit(1)
+	}
+	if pre == "" {
+		fmt.Fprintf(os.Stderr, "unable to determine Vault Prefix (did you forget to bind a Vault service?)\n")
+		os.Exit(1)
 	}
 
-	token := os.Getenv("VAULT_TOKEN")
-	if token == "" {
-		failed = true
-		fmt.Fprintf(os.Stderr, "Missing VAULT_TOKEN environment variable\n")
-	}
-
-	prefix := os.Getenv("VAULT_PREFIX")
-
-	api, err := NewAPI(url, token, prefix)
+	api, err := NewAPI(url, tok, pre)
 	if err != nil {
 		failed = true
 		fmt.Fprintf(os.Stderr, "%s\n", err)

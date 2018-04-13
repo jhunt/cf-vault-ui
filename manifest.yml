@@ -1,0 +1,6 @@
+---
+applications:
+  - name: cf-vault-ui
+    env:
+      GOPACKAGENAME: github.com/jhunt/cf-vault-ui
+      VAULT_SKIP_VERIFY: yes
