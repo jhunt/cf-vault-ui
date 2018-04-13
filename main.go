@@ -63,7 +63,12 @@ func main() {
 
 	go api.Background(5)
 
+	port := ":4005"
+	if os.Getenv("PORT") != "" {
+		port = fmt.Sprintf(":%s", os.Getenv("PORT"))
+	}
+
 	http.Handle("/", static.Handler{})
 	http.Handle("/v1/", api)
-	http.ListenAndServe(":4005", nil)
+	http.ListenAndServe(port, nil)
 }
