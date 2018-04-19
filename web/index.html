@@ -608,7 +608,6 @@ form .errors li {
       <li class="new key-value">
           <input autocomplete="off" class="key" type="text" name="key.next" placeholder="add...">
           <input autocomplete="off" class="val" type="text" name="value.next">
-          <a class="widget" href="#">&#x2699;</a></li>
       <button>Save</button>
     </form>
   </div>
@@ -1512,6 +1511,7 @@ var Lens = {};
         break;
       }
 
+      $form.find('button').text('Saving...').prop('disabled', true);
       api('PUT', '/v1/secret/' + path, d, {
         success: function (secret) {
           $('#m').template('secret', secret);

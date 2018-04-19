@@ -299,6 +299,7 @@
         break;
       }
 
+      $form.find('button').text('Saving...').prop('disabled', true);
       api('PUT', '/v1/secret/' + path, d, {
         success: function (secret) {
           $('#m').template('secret', secret);
