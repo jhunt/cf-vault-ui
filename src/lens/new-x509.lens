@@ -5,12 +5,12 @@
       <div class="errors"></div>
       <li class="path">
           <label for="path">path</label>
-          <input type="text" name="path" placeholder="e.g. /us/east/prod/ca"></li>
+          <input autocomplete="off" type="text" name="path" placeholder="e.g. /us/east/prod/ca"></li>
       <li><label for="subject">subject</label>
-          <input type="text" name="subject"></li>
+          <input autocomplete="off" type="text" name="subject"></li>
       <li class="expires-in">
           <label for="ttl_num">expires in</label>
-          <input type="text" name="ttl_num" size="3" value="2">
+          <input autocomplete="off" type="text" name="ttl_num" size="3" value="2">
           <ul class="radio">
             <li class="selected">y</li>
             <li>m</li>
@@ -19,11 +19,11 @@
           </ul></li>
       <li class="signed-by">
           <label for="ca">signed by</label>
-          <input type="text" name="ca" placeholder="e.g. /shared/prod/ca"></li>
+          <input autocomplete="off" type="text" name="ca" placeholder="e.g. /shared/prod/ca"></li>
 
       <li class="new valid-for">
           <label for="names">valid for</label>
-          <input placeholder="add a name, ip, or email..." type="text" name="name1"></li>
+          <input autocomplete="off" placeholder="add a name, ip, or email..." type="text" name="name1"></li>
 
       <button>Issue</button>
     </form>

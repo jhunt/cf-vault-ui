@@ -554,7 +554,7 @@ form .errors li {
       <div class="errors"></div>
       <li class="path">
           <label for="path">path</label>
-          <input type="text" name="path" placeholder="e.g. /us/east/prod/vm"></li>
+          <input autocomplete="off" type="text" name="path" placeholder="e.g. /us/east/prod/vm"></li>
       <li class="bits-for"><label for="bits">strength</label>
           <ul class="radio">
             <li data-value="1024">1024-bit</li>
@@ -572,12 +572,12 @@ form .errors li {
       <div class="errors"></div>
       <li class="path">
           <label for="path">path</label>
-          <input type="text" name="path" placeholder="e.g. /us/east/prod/ca"></li>
+          <input autocomplete="off" type="text" name="path" placeholder="e.g. /us/east/prod/ca"></li>
       <li><label for="subject">subject</label>
-          <input type="text" name="subject"></li>
+          <input autocomplete="off" type="text" name="subject"></li>
       <li class="expires-in">
           <label for="ttl_num">expires in</label>
-          <input type="text" name="ttl_num" size="3" value="2">
+          <input autocomplete="off" type="text" name="ttl_num" size="3" value="2">
           <ul class="radio">
             <li class="selected">y</li>
             <li>m</li>
@@ -586,11 +586,11 @@ form .errors li {
           </ul></li>
       <li class="signed-by">
           <label for="ca">signed by</label>
-          <input type="text" name="ca" placeholder="e.g. /shared/prod/ca"></li>
+          <input autocomplete="off" type="text" name="ca" placeholder="e.g. /shared/prod/ca"></li>
 
       <li class="new valid-for">
           <label for="names">valid for</label>
-          <input placeholder="add a name, ip, or email..." type="text" name="name1"></li>
+          <input autocomplete="off" placeholder="add a name, ip, or email..." type="text" name="name1"></li>
 
       <button>Issue</button>
     </form>
@@ -603,11 +603,11 @@ form .errors li {
       <div class="errors"></div>
       <li class="path">
           <label for="path">path</label>
-          <input type="text" name="path" placeholder="e.g. /us/east/prod/secret">
+          <input autocomplete="off" type="text" name="path" placeholder="e.g. /us/east/prod/secret">
       </li>
       <li class="new key-value">
-          <input class="key" type="text" name="key.next" placeholder="add...">
-          <input class="val" type="text" name="value.next">
+          <input autocomplete="off" class="key" type="text" name="key.next" placeholder="add...">
+          <input autocomplete="off" class="val" type="text" name="value.next">
           <a class="widget" href="#">&#x2699;</a></li>
       <button>Save</button>
     </form>
@@ -633,23 +633,23 @@ form .errors li {
     <form class="update" data-type="secret">
       <li class="path">
           <label for="path">path</label>
-          <input type="text" name="path" value="[[= _.path ]]" disabled>
+          <input autocomplete="off" type="text" name="path" value="[[= _.path ]]" disabled>
       </li>
       [[ $.each($.keys(_.secret), function (i, k) {
            var multi = _.secret[k].match(/\n/); ]]
       <li class="key-value hidden [[= multi ? 'multi' : 'single' ]]">
-          <input class="key" type="text" name="key.[[= i ]]" value="[[= k ]]">
+          <input autocomplete="off" class="key" type="text" name="key.[[= i ]]" value="[[= k ]]">
           [[ if (multi) { ]]
           <textarea class="val" name="value.[[= i ]]">[[= _.secret[k] ]]</textarea>
           [[ } else { ]]
-          <input class="val" type="password" name="value.[[= i ]]" value="[[= _.secret[k] ]]">
+          <input autocomplete="off" class="val" type="password" name="value.[[= i ]]" value="[[= _.secret[k] ]]">
           [[ } ]]
           <a class="widget" href="#">&#x2699;</a>
       </li>
       [[ }); ]]
       <li class="new key-value">
-          <input class="key" type="text" name="key.next" placeholder="add...">
-          <input class="val" type="text" name="value.next">
+          <input autocomplete="off" class="key" type="text" name="key.next" placeholder="add...">
+          <input autocomplete="off" class="val" type="text" name="value.next">
           <a class="widget" href="#">&#x2699;</a></li>
       <button>Save</button>
     </form>

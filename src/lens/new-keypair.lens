@@ -5,7 +5,7 @@
       <div class="errors"></div>
       <li class="path">
           <label for="path">path</label>
-          <input type="text" name="path" placeholder="e.g. /us/east/prod/vm"></li>
+          <input autocomplete="off" type="text" name="path" placeholder="e.g. /us/east/prod/vm"></li>
       <li class="bits-for"><label for="bits">strength</label>
           <ul class="radio">
             <li data-value="1024">1024-bit</li>
